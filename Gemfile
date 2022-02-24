@@ -45,6 +45,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   # A RuboCop extension focused on enforcing Rails best practices and coding conventions.
+  gem 'letter_opener', '~> 1.7'
+  # Preview email in the default browser instead of sending it
   gem 'rubocop-rails', '~> 2.13'
 end
 
@@ -58,7 +60,7 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
-
-gem "devise", "~> 4.8"
-
-gem "devise_invitable", "~> 2.0"
+# Manage user authentication
+gem 'devise', '~> 4.8'
+# Allow to invite user by email
+gem 'devise_invitable', '~> 2.0'
