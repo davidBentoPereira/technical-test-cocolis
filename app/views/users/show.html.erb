@@ -1,0 +1,8 @@
+<p id="notice"><%= notice %></p>
+
+<p><b>Prénom:</b> <%= @user.first_name %></p>
+<p><b>NOM:</b> <%= @user.last_name.upcase %></p>
+<p><b>Admin:</b> <%= "✓" if @user.admin %></p>
+
+<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Back', users_path %>
