@@ -16,20 +16,12 @@
       <div class="text-end">
         <% unless user_signed_in? %>
           <!-- Login -->
-          <%= link_to new_user_session_path do %>
-            <button type="button" class="btn btn-outline-light me-2">Connexion</button>
-          <% end %>
-          <!-- Subscribe -->
-          <%= link_to new_user_registration_path do %>
-            <button type="button" class="btn btn-warning">Inscription</button>
-          <% end %>
+          <%= link_to 'Connexion', new_user_session_path, class: 'btn btn-outline-light me-2' %>
         <% end %>
 
         <% if user_signed_in? %>
           <!-- Log Out -->
-          <%= link_to destroy_user_session_path  do  %>
-            <button type="button" class="btn btn-danger">Déconnexion</button>
-          <% end %>
+          <%= link_to 'Déconnexion', destroy_user_session_path, class: 'btn btn-danger' %>
         <% end %>
       </div>
     </div>
