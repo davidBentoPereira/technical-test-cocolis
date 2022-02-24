@@ -6,11 +6,11 @@
       <% end %>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><%= link_to 'Home', root_path, class: 'nav-link px-2 text-secondary' %></li>
-        <li><%= link_to 'Features', root_path, class: 'nav-link px-2 text-white' %></li>
-        <li><%= link_to 'Pricing', root_path, class: 'nav-link px-2 text-white' %></li>
-        <li><%= link_to 'FAQs', root_path, class: 'nav-link px-2 text-white' %></li>
-        <li><%= link_to 'About', root_path, class: 'nav-link px-2 text-white' %></li>
+        <li><%= link_to 'Home', root_path, class: 'nav-link px-2 text-white' %></li>
+        <% if user_signed_in? && current_user.admin %>
+          <li><%= link_to 'Utilisateurs', admin_users_path, class: 'nav-link px-2 text-white' %></li>
+          <li><%= link_to 'Inviter un utilisateur', new_user_invitation_path, class: 'nav-link px-2 text-white' %></li>
+        <% end %>
       </ul>
 
       <div class="text-end">
