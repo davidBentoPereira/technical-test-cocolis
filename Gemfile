@@ -31,6 +31,8 @@ gem 'bootsnap', '>= 1.4.4', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Manage environment variables from .env
+  gem "dotenv", "~> 2.7"
 end
 
 group :development do
@@ -42,6 +44,8 @@ group :development do
   gem 'listen', '~> 3.3'
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
+  # A RuboCop extension focused on enforcing Rails best practices and coding conventions.
+  gem "rubocop-rails", "~> 2.13"
 end
 
 group :test do
@@ -54,5 +58,3 @@ end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
-
-gem "dotenv", "~> 2.7"
