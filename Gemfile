@@ -38,7 +38,7 @@ group :development, :test do
   # Test framework
   gem 'rspec-rails', '~> 5.1'
   # Factories for rspec
-  gem 'factory_bot', '~> 6.2'
+  gem 'factory_bot_rails', '~> 6.2'
 end
 
 group :development do
@@ -74,3 +74,5 @@ gem 'devise_invitable', '~> 2.0'
 gem 'sidekiq', '~> 6.4'
 # Manage authorizations
 gem 'cancancan', '~> 3.3'
+# Generate Fake Data
+gem 'faker', '~> 2.19'
