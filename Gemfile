@@ -37,6 +37,8 @@ group :development, :test do
   gem 'annotate', '~> 3.2'
   # Test framework
   gem 'rspec-rails', '~> 5.1'
+  # Factories for rspec
+  gem 'factory_bot', '~> 6.2'
 end
 
 group :development do
