@@ -1,8 +1,45 @@
-<p id="notice"><%= notice %></p>
+<div class="container bg-light rounded-3 shadow-lg p-5 my-5">
+  <h3><%= "#{@user.first_name} #{@user.last_name.upcase}" %></h3>
 
-<p><b>Prénom:</b> <%= @user.first_name %></p>
-<p><b>NOM:</b> <%= @user.last_name.upcase %></p>
-<p><b>Admin:</b> <%= "✓" if @user.admin %></p>
+  <p id="notice"><%= notice %></p>
 
-<%= link_to 'Edit', edit_admin_user_path(@user) %> |
-<%= link_to 'Back', admin_users_path %>
+  <table class="table table-striped">
+    <tbody>
+    <tr>
+      <th scope="row">Id</th>
+      <td><%= @user.id %></td>
+    </tr>
+    <tr>
+      <th scope="row">Email</th>
+      <td><%= @user.email %></td>
+    </tr>
+    <tr>
+      <th scope="row">Prénom</th>
+      <td><%= @user.first_name %></td>
+    </tr>
+    <tr>
+      <th scope="row">Nom</th>
+      <td><%= @user.last_name.upcase %></td>
+    </tr>
+    <tr>
+      <th scope="row">Admin</th>
+      <td><%= "✓" if @user.admin %></td>
+    </tr>
+    <% if @user.invitation_accepted_at %>
+      <tr>
+        <th scope="row">Créé le</th>
+        <td><%= "✓" if @user.invitation_accepted_at %></td>
+      </tr>
+    <% end %>
+    </tbody>
+  </table>
+
+  <div class="d-flex justify-content-center">
+    <%= link_to edit_admin_user_path(@user), class: 'btn btn-warning m-2' do %>
+      Editer <i class="fa-solid fa-pencil"></i>
+    <% end %>
+    <%= link_to admin_users_path, class: 'btn btn-outline-secondary m-2' do %>
+      <i class="fa-solid fa-arrow-left"></i> Retour
+    <% end %>
+  </div>
+</div>
