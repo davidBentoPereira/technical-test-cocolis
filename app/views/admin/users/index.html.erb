@@ -1,43 +1,46 @@
-<h1 class="display-6 my-3">Utilisateurs</h1>
+<div class="container my-3">
+  <h1 class="display-6">Utilisateurs</h1>
 
-<p id="notice"><%= notice %></p>
+  <p id="notice"><%= notice %></p>
 
-<div class="d-flex justify-content-end">
-  <%= link_to new_admin_user_path, class: 'btn btn-outline-success' do %>
-    Ajouter <i class="fa-solid fa-plus"></i>
-  <% end %>
-</div>
-
-<div class="table-responsive">
-  <table class="table table-striped">
-    <thead>
-    <tr>
-      <th scope="col">#</th>
-      <th scope="col">Email</th>
-      <th scope="col">Prénom</th>
-      <th scope="col">Nom</th>
-      <th scope="col">Admin</th>
-      <th scope="col">Actions</th>
-    </tr>
-    </thead>
-    <tbody>
-
-    <% @users.each_with_index do |user, i| %>
-      <tr>
-        <th scope="row"><%= i + 1 %></th>
-        <td><%= user.email %></td>
-        <td><%= user.first_name %></td>
-        <td><%= user.last_name %></td>
-        <td><%= '✓' if user.admin%></td>
-        <td class="d-flex">
-          <%= link_to admin_user_path(user), class: 'btn btn-outline-primary btn-sm' do %> <i class="fa-solid fa-eye"></i> <% end %>
-          <%= link_to edit_admin_user_path(user), class: 'btn btn-sm btn-outline-secondary mx-1' do %> <i class="fa-solid fa-pencil"></i> <% end %>
-          <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' do %> <i class="fa-solid fa-trash"></i> <% end %>
-        </td>
-      </tr>
+  <div class="d-flex justify-content-end">
+    <%= link_to new_admin_user_path, class: 'btn btn-outline-success' do %>
+      Ajouter <i class="fa-solid fa-plus"></i>
     <% end %>
-    </tbody>
-  </table>
-</div>
+  </div>
 
-<br>
+  <div class="table-responsive">
+    <table class="table table-striped">
+      <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Email</th>
+        <th scope="col">Prénom</th>
+        <th scope="col">Nom</th>
+        <th scope="col">Admin</th>
+        <th scope="col">Actions</th>
+      </tr>
+      </thead>
+      <tbody>
+
+      <% @users.each_with_index do |user, i| %>
+        <tr>
+          <th scope="row"><%= i + 1 %></th>
+          <td><%= user.email %></td>
+          <td><%= user.first_name %></td>
+          <td><%= user.last_name %></td>
+          <td><%= '✓' if user.admin%></td>
+          <td class="d-flex">
+            <%= link_to admin_user_path(user), class: 'btn btn-outline-primary btn-sm' do %> <i class="fa-solid fa-eye"></i> <% end %>
+            <%= link_to edit_admin_user_path(user), class: 'btn btn-sm btn-outline-secondary mx-1' do %> <i class="fa-solid fa-pencil"></i> <% end %>
+            <%= link_to admin_user_path(user), method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-outline-danger btn-sm' do %> <i class="fa-solid fa-trash"></i> <% end %>
+          </td>
+        </tr>
+      <% end %>
+      </tbody>
+    </table>
+  </div>
+
+  <br>
+
+</div>
