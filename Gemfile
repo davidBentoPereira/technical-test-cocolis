@@ -68,3 +68,5 @@ gem 'devise', '~> 4.8'
 gem 'devise_invitable', '~> 2.0'
 # Simple, efficient background processing for Ruby
 gem 'sidekiq', '~> 6.4'
+# Manage authorizations
+gem 'cancancan', '~> 3.3'
