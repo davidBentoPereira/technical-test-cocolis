@@ -35,6 +35,8 @@ group :development, :test do
   gem 'dotenv', '~> 2.7'
   # Anotates models, factories, ... with model properties
   gem 'annotate', '~> 3.2'
+  # Test framework
+  gem 'rspec-rails', '~> 5.1'
 end
 
 group :development do
