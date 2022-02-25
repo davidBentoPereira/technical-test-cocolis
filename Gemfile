@@ -33,6 +33,8 @@ group :development, :test do
   gem 'byebug', platforms: %i[mri mingw x64_mingw]
   # Manage environment variables from .env
   gem 'dotenv', '~> 2.7'
+  # Anotates models, factories, ... with model properties
+  gem 'annotate', '~> 3.2'
 end
 
 group :development do
@@ -64,5 +66,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise', '~> 4.8'
 # Allow to invite user by email
 gem 'devise_invitable', '~> 2.0'
-
-gem "annotate", "~> 3.2"
+# Simple, efficient background processing for Ruby
+gem 'sidekiq', '~> 6.4'
