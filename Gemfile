@@ -64,3 +64,5 @@ gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
 gem 'devise', '~> 4.8'
 # Allow to invite user by email
 gem 'devise_invitable', '~> 2.0'
+
+gem "annotate", "~> 3.2"
