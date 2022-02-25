@@ -27,4 +27,10 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :invitable, :database_authenticatable,
          :recoverable, :rememberable, :validatable
+
+  after_create :send_welcome_email
+
+  def send_welcome_email
+    WelcomeEmailJob.perform_in(5.minutes, email, first_name)
+  end
 end
