@@ -110,6 +110,13 @@ foreman start -f Procfile.dev # use gem install foreman if not already installed
 
 _Notes: Procfile.dev is used for the local environement only. Heroku will use Procfile in production._
 
+
+---
+
+## Infos
+
+- I used [livecanvas.com](https://livecanvas.com/sections/) to quickly build a basic landing page in Bootstrap
+
 --- 
 
 ## 🦄 Official Authors
