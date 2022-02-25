@@ -20,6 +20,8 @@
         <% end %>
 
         <% if user_signed_in? %>
+          <!-- Edit Account -->
+          <%= link_to 'Editer mot de passe', user_password_path, class: 'btn btn-secondary' %>
           <!-- Log Out -->
           <%= link_to 'Déconnexion', destroy_user_session_path, class: 'btn btn-danger' %>
         <% end %>
