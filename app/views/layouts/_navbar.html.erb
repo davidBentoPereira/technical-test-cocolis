@@ -6,24 +6,24 @@
       <% end %>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><%= link_to 'Home', root_path, class: 'nav-link px-2 text-white' %></li>
+        <li><%= link_to root_path, class: 'nav-link px-2 text-white' do %><i class="fa-solid fa-house"></i> Accueil<% end %></li>
         <% if user_signed_in? && current_user.admin %>
-          <li><%= link_to 'Utilisateurs', admin_users_path, class: 'nav-link px-2 text-white' %></li>
-          <li><%= link_to 'Inviter un utilisateur', new_user_invitation_path, class: 'nav-link px-2 text-white' %></li>
+          <li><%= link_to admin_users_path, class: 'nav-link px-2 text-white' do %><i class="fa-solid fa-users"></i> Utilisateurs<% end %></li>
+          <li><%= link_to new_user_invitation_path, class: 'nav-link px-2 text-white' do %><i class="fa-solid fa-plus"></i> Inviter un utiliateur<% end %></li>
         <% end %>
       </ul>
 
       <div class="text-end">
         <% unless user_signed_in? %>
           <!-- Login -->
-          <%= link_to 'Connexion', new_user_session_path, class: 'btn btn-outline-light me-2' %>
+          <%= link_to new_user_session_path, class: 'btn btn-outline-light me-2' do %><i class="fa-solid fa-arrow-right-to-bracket"></i> Connexion<% end %>
         <% end %>
 
         <% if user_signed_in? %>
           <!-- Edit Account -->
-          <%= link_to 'Editer mot de passe', user_password_path, class: 'btn btn-secondary' %>
+          <%= link_to edit_user_registration_path, class: 'btn btn-secondary' do %><i class="fa-solid fa-gear"></i> Mon Compte<% end %>
           <!-- Log Out -->
-          <%= link_to 'Déconnexion', destroy_user_session_path, class: 'btn btn-danger' %>
+          <%= link_to destroy_user_session_path, class: 'btn btn-danger' do %><i class="fa-solid fa-power-off"></i> Déconnexion<% end %>
         <% end %>
       </div>
     </div>
