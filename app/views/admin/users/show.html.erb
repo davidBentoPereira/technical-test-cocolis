@@ -1,5 +1,5 @@
 <div class="container bg-light rounded-3 shadow-lg p-5 my-5">
-  <h3><%= "#{@user.first_name} #{@user.last_name.upcase}" %></h3>
+  <h3><%= "#{@user.first_name} #{@user.last_name.try(:upcase)}" %></h3>
 
   <p id="notice"><%= notice %></p>
 
@@ -19,7 +19,7 @@
     </tr>
     <tr>
       <th scope="row">Nom</th>
-      <td><%= @user.last_name.upcase %></td>
+      <td><%= @user.last_name.try(:upcase) %></td>
     </tr>
     <tr>
       <th scope="row">Admin</th>
