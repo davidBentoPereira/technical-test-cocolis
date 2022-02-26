@@ -39,6 +39,10 @@ group :development, :test do
   gem 'rspec-rails', '~> 5.1'
   # Factories for rspec
   gem 'factory_bot_rails', '~> 6.2'
+  # Add-on for controller testing
+  gem 'rails-controller-testing', '~> 1.0'
+  # Useful for debuging
+  gem 'pry', '~> 0.14.1'
 end
 
 group :development do
