@@ -88,10 +88,11 @@ rails db:seed
 ---
 ## 🏃‍ Run
 
-Run Rails Server by using the command :
+Run Rails Server and Sidekiq by using these commands :
 
 ```bash
 rails server
+bundle exec sidekiq
 ```
 
 You may need to run Webpack to compile the assets :
@@ -102,7 +103,7 @@ bin/webpack --watch
 
 ### Alternative Run
 
-If you want to run all needed services in one command (rails server + webpack), just run :
+If you want to run all needed services in one command (rails server + webpack + sidekiq), just run :
 
 ````bash
 foreman start -f Procfile.dev # use gem install foreman if not already installed in your computer
