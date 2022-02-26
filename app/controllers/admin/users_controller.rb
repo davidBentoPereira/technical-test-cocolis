@@ -4,11 +4,14 @@ class Admin::UsersController < ApplicationController
 
   # GET /users
   def index
-    @users = User.all.order(:id)
+    # @users = User.all
+    @users = User.all.accessible_by(current_ability)
   end
 
   # GET /users/1
-  def show; end
+  def show
+    authorize! :read, @user
+  end
 
   # GET /users/new
   def new
