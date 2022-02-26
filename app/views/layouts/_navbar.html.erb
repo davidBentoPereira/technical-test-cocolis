@@ -15,8 +15,10 @@
 
       <div class="text-end">
         <% unless user_signed_in? %>
+          <!-- Sign Up -->
+          <%= link_to new_user_registration_path, class: 'btn btn-outline-light me-2' do %>Inscription<% end %>
           <!-- Login -->
-          <%= link_to new_user_session_path, class: 'btn btn-outline-light me-2' do %><i class="fa-solid fa-arrow-right-to-bracket"></i> Connexion<% end %>
+          <%= link_to new_user_session_path, class: 'btn btn-outline-light me-2' do %>Connexion<% end %>
         <% end %>
 
         <% if user_signed_in? %>
