@@ -72,6 +72,8 @@ fr:
         instruction: 'Suivez ce lien pour débloquer votre compte :'
         message: Votre compte a été bloqué suite à un nombre d'essais de connexions manquées trop important.
         subject: Instructions pour déverrouiller le compte
+      invitation_instructions:
+        accept_until_format: "%B %d, %Y %I:%M %p"
     omniauth_callbacks:
       failure: 'Nous ne pouvons pas vous authentifier depuis %{kind} pour la raison suivante : ''%{reason}''.'
       success: Autorisé par votre compte %{kind}.
