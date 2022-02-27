@@ -6,10 +6,10 @@
       <% end %>
 
       <ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
-        <li><%= link_to root_path, class: 'nav-link px-2 text-white' do %><i class="fa-solid fa-house"></i> Accueil<% end %></li>
+        <li><%= link_to root_path, class: 'nav-link px-2' + is_active?('welcome', 'index') do %><i class="fa-solid fa-house"></i> Accueil<% end %></li>
         <% if user_signed_in? && current_user.admin %>
-          <li><%= link_to admin_users_path, class: 'nav-link px-2 text-white' do %><i class="fa-solid fa-users"></i> Utilisateurs<% end %></li>
-          <li><%= link_to new_user_invitation_path, class: 'nav-link px-2 text-white' do %><i class="fa-solid fa-plus"></i> Inviter un utiliateur<% end %></li>
+          <li><%= link_to admin_users_path, class: 'nav-link px-2' + is_active?('users', 'index') do %><i class="fa-solid fa-users"></i> Utilisateurs<% end %></li>
+          <li><%= link_to new_user_invitation_path, class: 'nav-link px-2' + is_active?('invitations', 'new') do %><i class="fa-solid fa-plus"></i> Inviter un utiliateur<% end %></li>
         <% end %>
       </ul>
 
@@ -31,6 +31,3 @@
     </div>
   </div>
 </header>
-
-
-
