@@ -114,8 +114,9 @@ _Notes: Procfile.dev is used for the local environement only. Heroku will use Pr
 
 ---
 
-## Infos
+## ℹ️ Infos
 
+- I used this [Notion](https://horn-decade-127.notion.site/Cocolis-Technical-Test-4303a6c1aa9d46fd9e5b53d537902c14) to list all my tasks on this project: 
 - I used [livecanvas.com](https://livecanvas.com/sections/) to quickly build a basic landing page in Bootstrap
 - I used [this repo](https://github.com/nauvalazhar/bootstrap-4-login-page) to quickly design the sign in, sign up and forgot password pages with Bootstrap
 
@@ -123,4 +124,4 @@ _Notes: Procfile.dev is used for the local environement only. Heroku will use Pr
 
 ## 🦄 Official Authors
 
-David BENTO-PEREIRA: https://github.com/davidBentoPereira
+[David BENTO-PEREIRA ✌️](https://github.com/davidBentoPereira) 
