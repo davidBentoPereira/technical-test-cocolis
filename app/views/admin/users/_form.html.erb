@@ -30,11 +30,11 @@
   <div class="row mt-3">
     <div class="col">
       <%= f.label :password, class: 'form-label' %>
-      <%= f.password_field :password, class: 'form-control' %>
+      <%= f.password_field :password, class: 'form-control', autocomplete: "current-password", value: :current_password %>
     </div>
     <div class="col">
       <%= f.label :password_confirmation, class: 'form-label' %>
-      <%= f.password_field :password_confirmation, class: 'form-control' %>
+      <%= f.password_field :password_confirmation, value: :current_password, class: 'form-control' %>
     </div>
   </div>
 

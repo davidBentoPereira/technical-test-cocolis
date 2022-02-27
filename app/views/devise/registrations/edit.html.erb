@@ -1,4 +1,4 @@
-<section class="h-100">
+<section class="h-100 mb-5">
   <div class="container h-100">
     <div class="row justify-content-sm-center h-100">
       <div class="col-xxl-4 col-xl-5 col-lg-5 col-md-7 col-sm-9">
@@ -15,13 +15,23 @@
               <%= render "devise/shared/error_messages", resource: resource %>
 
               <div class="mb-3">
+                <%= f.label :first_name, class: 'mb-2 text-muted' %>
+                <%= f.text_field :first_name, autofocus: true, autocomplete: "first_name", required: true, class: 'form-control' %>
+              </div>
+
+              <div class="mb-3">
+                <%= f.label :last_name, class: 'mb-2 text-muted' %>
+                <%= f.text_field :last_name, autofocus: true, autocomplete: "last_name", required: true, class: 'form-control' %>
+              </div>
+
+              <div class="mb-3">
                 <%= f.label :email, class: 'mb-2 text-muted' %>
                 <%= f.email_field :email, autofocus: true, autocomplete: "email", required: true, class: 'form-control' %>
               </div>
 
               <div class="mb-3">
                 <%= f.label :password, class: 'mb-2 text-muted' %>
-                <%= f.password_field :password, autocomplete: "new-password", required: true, class: 'form-control' %>
+                <%= f.password_field :password, autocomplete: "new-password", class: 'form-control' %>
                 <% if @minimum_password_length %>
                   <i class="small"><%= I18n.t('devise.shared.minimum_password_length', count: @minimum_password_length) %></i><br>
                 <% end %>
@@ -30,12 +40,12 @@
 
               <div class="mb-3">
                 <%= f.label :password_confirmation, class: 'mb-2 text-muted' %>
-                <%= f.password_field :password_confirmation, autocomplete: "new-password", required: true, class: 'form-control' %>
+                <%= f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control' %>
               </div>
 
               <div class="mb-3">
                 <%= f.label :current_password, class: 'mb-2 text-muted' %>
-                <%= f.password_field :current_password, autocomplete: "current-password", required: true, class: 'form-control' %>
+                <%= f.password_field :current_password, value: :current_password, class: 'form-control' %>
                 <i class="small"><%= I18n.t('devise.registrations.edit.we_need_your_current_password_to_confirm_your_changes') %></i>
               </div>
 
