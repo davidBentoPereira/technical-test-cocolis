@@ -117,6 +117,7 @@ _Notes: Procfile.dev is used for the local environement only. Heroku will use Pr
 ## Infos
 
 - I used [livecanvas.com](https://livecanvas.com/sections/) to quickly build a basic landing page in Bootstrap
+- I used [this repo](https://github.com/nauvalazhar/bootstrap-4-login-page) to quickly design the sign in, sign up and forgot password pages with Bootstrap
 
 --- 
 
