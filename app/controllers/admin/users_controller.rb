@@ -10,7 +10,7 @@ class Admin::UsersController < ApplicationController
 
   # GET /users/1
   def show
-    authorize! :read, @user
+    # authorize! :read, @user
   end
 
   # GET /users/new

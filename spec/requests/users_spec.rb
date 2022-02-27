@@ -84,17 +84,19 @@ RSpec.describe '/users', type: :request do
 
     context 'when user is not admin' do
       before(:each) do
-        sign_in(users.first)
+        sign_in(user)
       end
 
       it 'can access its own profile' do
-        get admin_user_path(users.first)
-        expect(assigns(:user)).to eq(users.first)
+        get admin_user_path(user)
+        expect(assigns(:user)).to eq(user)
       end
 
-      it "can't access an other user's profile" do
-        get admin_user_path(users.last)
-        expect(response).to have_http_status(:forbidden) # 403
+      context 'as not authorized' do
+        it 'redirects to home page' do
+          get admin_user_path(users.last)
+          expect(response).to redirect_to root_path
+        end
       end
     end
   end
@@ -147,10 +149,12 @@ RSpec.describe '/users', type: :request do
         expect(response).to be_successful
       end
 
-      it "can't access other users' profiles" do
-        sign_in(user)
-        get edit_admin_user_path(users.first)
-        expect(response).to have_http_status(:forbidden) # 403
+      context 'as not authorized' do
+        it 'redirects to home page' do
+          sign_in(user)
+          get edit_admin_user_path(users.first)
+          expect(response).to redirect_to root_path
+        end
       end
     end
   end
@@ -196,14 +200,6 @@ RSpec.describe '/users', type: :request do
         patch admin_user_path(user), params: { user: new_attributes }
         user.reload
         expect(response).to redirect_to(admin_user_path(user))
-      end
-    end
-
-    context 'with invalid parameters' do
-      it "renders a successful response (i.e. to display the 'edit' template)" do
-        user = User.create! valid_attributes
-        patch admin_user_path(user), params: { user: invalid_attributes }
-        expect(response).to be_successful
       end
     end
   end
